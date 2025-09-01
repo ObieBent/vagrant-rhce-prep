@@ -1,0 +1,17 @@
+# OS-specific
+.DS_Store
+*.retry
+.*
+!.gitignore
+!.git/
+
+
+# editors
+*.swp
+
+# Vagrant
+.vagrant
+Vagrantfile
+!example_box/Vagrantfile
+
+
