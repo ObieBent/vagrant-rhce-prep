@@ -39,7 +39,6 @@ alias l='ls $LS_OPTIONS -lA'
 export LESS='FiX'
 
 # Nodes 
-alias controller='ssh vagrant@controller'
 alias node1='ssh vagrant@node1'
 alias node2='ssh vagrant@node2'
 alias node3='ssh vagrant@node3'
