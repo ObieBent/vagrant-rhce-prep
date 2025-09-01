@@ -29,12 +29,6 @@ Vagrant.configure("2") do |config|
       qe.ssh_port = 50024
       qe.extra_netdev_args = "net=172.25.250.0/24,dhcpstart=172.25.250.9"
     end
-    node1.vm.provision "shell", inline: <<-SHELL
-      echo -e "#{nodes.map { |h, i| "#{i} #{h}" }.join("\\n")}" | sudo tee -a /etc/hosts
-      cp /vagrant-rhce-prep/bashrc /etc/bashrc 
-      chmod 644 /etc/hosts
-      source /etc/bashrc
-    SHELL
   end
 
   config.vm.define "node2" do |node2|
@@ -46,12 +40,6 @@ Vagrant.configure("2") do |config|
       qe.ssh_port = 50025
       qe.extra_netdev_args = "net=172.25.250.0/24,dhcpstart=172.25.250.10"
     end
-    node2.vm.provision "shell", inline: <<-SHELL
-      echo -e "#{nodes.map { |h, i| "#{i} #{h}" }.join("\\n")}" | sudo tee -a /etc/hosts
-      cp /vagrant-rhce-prep/bashrc /etc/bashrc 
-      chmod 644 /etc/hosts
-      source /etc/bashrc
-    SHELL
   end
 
   config.vm.define "node3" do |node3|
@@ -63,12 +51,6 @@ Vagrant.configure("2") do |config|
       qe.ssh_port = 50026
       qe.extra_netdev_args = "net=172.25.250.0/24,dhcpstart=172.25.250.11"
     end
-    node3.vm.provision "shell", inline: <<-SHELL
-      echo -e "#{nodes.map { |h, i| "#{i} #{h}" }.join("\\n")}" | sudo tee -a /etc/hosts
-      cp /vagrant-rhce-prep/bashrc /etc/bashrc 
-      chmod 644 /etc/hosts
-      source /etc/bashrc
-    SHELL
   end
   
   config.vm.define "node4" do |node4|
@@ -80,12 +62,6 @@ Vagrant.configure("2") do |config|
       qe.ssh_port = 50027
       qe.extra_netdev_args = "net=172.25.250.0/24,dhcpstart=172.25.250.12"
     end
-    node4.vm.provision "shell", inline: <<-SHELL
-      echo -e "#{nodes.map { |h, i| "#{i} #{h}" }.join("\\n")}" | sudo tee -a /etc/hosts
-      cp /vagrant-rhce-prep/bashrc /etc/bashrc 
-      chmod 644 /etc/hosts
-      source /etc/bashrc
-    SHELL
   end
 
   config.vm.define "node5" do |node5|
@@ -97,11 +73,5 @@ Vagrant.configure("2") do |config|
       qe.ssh_port = 50028
       qe.extra_netdev_args = "net=172.25.250.0/24,dhcpstart=172.25.250.13"
     end
-    node5.vm.provision "shell", inline: <<-SHELL
-      echo -e "#{nodes.map { |h, i| "#{i} #{h}" }.join("\\n")}" | sudo tee -a /etc/hosts
-      cp /vagrant-rhce-prep/bashrc /etc/bashrc 
-      chmod 644 /etc/hosts
-      source /etc/bashrc
-    SHELL
   end
 end
