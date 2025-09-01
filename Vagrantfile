@@ -13,7 +13,6 @@ Vagrant.configure("2") do |config|
       qe.extra_netdev_args = "net=172.25.250.0/24,dhcpstart=172.25.250.8"
     end
     controller.vm.provision "shell", inline: <<-SHELL
-      echo -e "#{nodes.map { |h, i| "#{i} #{h}" }.join("\\n")}" | sudo tee -a /etc/hosts
       cp /vagrant-rhce-prep/bashrc /etc/bashrc 
       chmod 644 /etc/hosts
       source /etc/bashrc
